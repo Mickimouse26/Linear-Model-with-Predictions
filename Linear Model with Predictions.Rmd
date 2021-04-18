@@ -89,6 +89,8 @@ summary.lm(model.2)
 basicBB + geom_point() + geom_smooth(method=lm)
 ```
 
+The equation for SIMS explained by GRIP is
+SIMS= -4.1+.0.045*GRIP
 
 
 

@@ -51,6 +51,8 @@ model.1 <- lm(SIMS~ARM,data=data)
 summary.lm(model.1)
 ```
 
+adjusted r-squared is 0.047
+
 # now add the model fit to our plot 
 
 ```{r}
@@ -83,6 +85,8 @@ model.2 <- lm(SIMS~GRIP,data=data)
 summary.lm(model.2)
 ```
 
+the adjusted r-squared is 0.041
+
 # now add the model fit to our plot 
 
 ```{r}
@@ -94,10 +98,7 @@ SIMS= -4.1+.0.045*GRIP
 
 
 
-```{r}
-model.2 <- lm(SIMS~GRIP,data=data)
-summary.lm(model.2)
-```
+
 
 # now add the model fit to our plot 
 
@@ -111,13 +112,16 @@ basicBB + geom_point() + geom_smooth(method=lm)
 model.3 <- lm(SIMS~GRIP+ARM,data=data)
 summary.lm(model.3)
 ```
-
+the adjusted r-squared is 0.54
 
 The equation for SIMS explained by GRIP is
 SIMS= -5.43+.0.024 GRIP+0.037 ARM
 
 
-
+```{r}
+anova(model.1,model.3)
+```
+comparing model with grip to with arm and grip, p-value=.000005 this means the models with arm and grip is the best model
 
 
 

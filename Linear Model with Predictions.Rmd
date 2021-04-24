@@ -94,3 +94,31 @@ SIMS= -4.1+.0.045*GRIP
 
 
 
+```{r}
+model.2 <- lm(SIMS~GRIP,data=data)
+summary.lm(model.2)
+```
+
+# now add the model fit to our plot 
+
+```{r}
+basicBB + geom_point() + geom_smooth(method=lm)
+```
+
+# fit model with Arm and Grip
+
+```{r}
+model.3 <- lm(SIMS~GRIP+ARM,data=data)
+summary.lm(model.3)
+```
+
+
+The equation for SIMS explained by GRIP is
+SIMS= -5.43+.0.024 GRIP+0.037 ARM
+
+
+
+
+
+
+
